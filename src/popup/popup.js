@@ -1,21 +1,22 @@
 import Vue from 'vue'
 import App from './App'
-import { 
-  Button, 
-  Radio,
-  Checkbox, 
-  Row, 
-  Col, 
-  Card, 
-  Empty,
-  Dialog,
-  Input,
-  Image,
-  RadioGroup,
-  RadioButton,
-  // MessageBox,
-  // Message
-  // Divider
+import {
+    Button,
+    Radio,
+    Checkbox,
+    Row,
+    Col,
+    Card,
+    Empty,
+    Dialog,
+    Input,
+    Image,
+    RadioGroup,
+    RadioButton,
+    TimePicker,
+    // MessageBox,
+    // Message
+    // Divider
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/button.css'
 import 'element-ui/lib/theme-chalk/radio.css'
@@ -33,26 +34,28 @@ import 'element-ui/lib/theme-chalk/radio-group.css'
 // import 'element-ui/lib/theme-chalk/message-box.css'
 import 'element-ui/lib/theme-chalk/message.css'
 // import 'element-ui/lib/theme-chalk/divider.css'
+import 'element-ui/lib/theme-chalk/time-picker.css'
 import '../fonts/iconfont.css'
 
 Vue.use(Button)
-.use(Radio)
-.use(Checkbox)
-.use(Row)
-.use(Col)
-.use(Card)
-.use(Empty)
-.use(Dialog)
-.use(Input)
-.use(Image)
-.use(RadioGroup)
-.use(RadioButton)
+    .use(Radio)
+    .use(Checkbox)
+    .use(Row)
+    .use(Col)
+    .use(Card)
+    .use(Empty)
+    .use(Dialog)
+    .use(Input)
+    .use(Image)
+    .use(RadioGroup)
+    .use(RadioButton)
+    .use(TimePicker)
 // .use(Message)
 // .use(MessageBox)
 // .use(Divider)
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  render: h => h(App)
+    el: '#app',
+    render: h => h(App)
 })

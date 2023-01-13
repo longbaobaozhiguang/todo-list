@@ -19,6 +19,7 @@
         @blur="handlerTitleInputBlur()"
         @keyup.enter.native="handlerTitleInputBlur()" 
       ></el-input>
+
     </header>
     <!-- card -->
     <el-card class="box-card" shadow="never">
@@ -46,13 +47,13 @@
             name="fade"
             tag="div"
           >
-            <el-row 
+            <el-row
               :class="{'clear-transition': !isDrag}" 
               v-for="item of tasks" 
               :key="item.id"
             >
               <el-col>
-                <el-checkbox 
+                <el-checkbox
                   class="checkbox"
                   v-model="item.checked"
                   @change="handlerCheckboxChange(item)"
@@ -262,7 +263,8 @@ export default {
         id: uuidv4(),
         label: '',
         isEdit: true,
-        checked: false
+        checked: false,
+        time: '',
       });
     },
     // Remove Task
@@ -309,7 +311,7 @@ export default {
         this.tasks = temp;
       }
       updateTasksListLocalstory(this.tasks);
-    },
+    }
   }
 }
 </script>
@@ -464,6 +466,19 @@ footer{
   transform:rotate(360deg);
   -webkit-transition:-webkit-transform .5s;
   transition:transform .5s;
+}
+
+.hide-input {
+  position: relative !important;
+}
+
+.hide-input .el-date-editor {
+  background-color: darkblue !important;
+  width: auto !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  opacity: 0;
 }
 
 </style>

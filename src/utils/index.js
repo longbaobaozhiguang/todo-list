@@ -1,8 +1,13 @@
 
+const notifyTaskChanged = () => {
+  chrome.runtime.sendMessage({cmd: 'tasks'});
+}
+
 // Save Tasks
 export const setTasksListLocalstory  = (tasks) => {
   chrome.storage.sync.set({'tasks': tasks}, function() {
     console.log('😄 Create Tasks Success～');
+    notifyTaskChanged();
   })
 }
 
@@ -18,6 +23,7 @@ export const getTasksListLocalstory  = (self) => {
 export const updateTasksListLocalstory  = (tasks) => {
   chrome.storage.sync.set({'tasks': tasks}, ()=> {
     console.log('🚀 Update Tasks Success～');
+    notifyTaskChanged();
   })
 }
 
@@ -25,6 +31,7 @@ export const updateTasksListLocalstory  = (tasks) => {
 export const clearTasksLocalstory  = () => {
   chrome.storage.sync.remove('tasks',()=>{
     console.log('🧹 Clear Tasks Success～');
+    notifyTaskChanged();
   })
 }
 
